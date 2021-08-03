@@ -32,10 +32,10 @@ app.use('/api/v1', payment);
 app.use('/api/v1', order);
 
 if (process.env.NODE_ENV === 'PRODUCTION') {
-    app.use(express.static(path.join(__dirname, '../frontend/public')))
+    app.use(express.static(path.join(__dirname, '../frontend/build')))
 
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '../frontend/public/index.html'))
+        res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'))
     })
 }
 
